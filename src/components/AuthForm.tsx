@@ -19,11 +19,23 @@ export function AuthForm({ type }: AuthFormProps) {
 
     try {
       if (type === 'signup') {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
+          options: {
+            emailRedirectTo: window.location.origin
+          }
         });
+        
         if (error) throw error;
+        if (data.user) {
+          // Automatically sign in after signup
+          const { error: signInError } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+          });
+          if (signInError) throw signInError;
+        }
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email,

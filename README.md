@@ -14,49 +14,33 @@ A modern web application for managing gym class registrations, built with React,
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v18 or higher).
 - npm or yarn
-- Supabase account
+- Supabase account with a project initiated.
 
 ## Getting Started
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
-cd gym-registration-system
+git clone https://github.com/vineet-motwani/Fitpage-assignment.git
+cd Fitpage-assignment
 ```
 
 2. Install dependencies
 ```bash
-npm install
+npm i
 ```
 
 3. Set up environment variables
 Create a `.env` file in the root directory with your Supabase credentials:
 ```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=your_supabase_url (without quotes)
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key (without quotes)
 ```
 
 4. Start the development server
 ```bash
 npm run dev
-```
-
-## Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── AuthForm.tsx    # Login/Signup form
-│   ├── AuthToggle.tsx  # Toggle between login/signup
-│   ├── Dashboard.tsx   # User dashboard
-│   └── RegistrationForm.tsx  # New user registration
-├── lib/
-│   └── supabase.ts     # Supabase client configuration
-├── types/
-│   └── database.ts     # TypeScript types for database
-└── App.tsx             # Main application component
 ```
 
 ## Database Schema
@@ -85,8 +69,8 @@ profiles (
 - Secure authentication handled by Supabase
 
 ### Profile Management
-- New users must complete their profile after registration
-- Profile includes: full name, gender, and preferred batch
+- New users must complete their profile after registration (onboarding types).
+- Profile includes: full name, gender, and preferred batch (other fields can be added as and when required).
 
 ### Batch System
 - Four available batches:
@@ -94,35 +78,19 @@ profiles (
   - Afternoon (2:00 PM - 4:00 PM)
   - Evening (6:00 PM - 8:00 PM)
   - Night (8:00 PM - 10:00 PM)
-- Users can request batch changes for the next month
+- Users can request batch changes for the next month (I have implemented this as a toggle, however notifiers can be added in the backend for admin).
 
 ### Payment System
-- Monthly fees must be paid in advance
+- Monthly fees must be paid in advance, however payment system has not been integrated yet.
 - Payment status tracked in the database
 - Simple payment confirmation system
 
 ## Security Features
 
-- Row Level Security (RLS) enabled
-- Secure authentication with Supabase
-- Protected API endpoints
-- Personal information security
-
-## Development
-
-To start development:
-
-1. Make sure all dependencies are installed:
-```bash
-npm install
-```
-
-2. Start the development server:
-```bash
-npm run dev
-```
-
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
+- Row Level Security (RLS) enabled due to requirements by Supabase.
+- Secure authentication with Supabase.
+- Protected API endpoints.
+- Personal information security.
 
 ## Building for Production
 
@@ -134,14 +102,4 @@ npm run build
 
 The build artifacts will be stored in the `dist/` directory.
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details
+Looking forward to hearing back from you at [Vineet K. Motwani](mailto:motwanivineet08@gmail.com)
